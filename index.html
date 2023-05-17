@@ -9,17 +9,22 @@
 </head>
 <body>
 <div id="card">
-<model-viewer src="TNA.glb" poster="poster.webp" shadow-intensity="1" ar camera-controls touch-action="pan-y" alt="A 3D model carousel">
-   
+<model-viewer src="Chair.glb" poster="Chair.webp" shadow-intensity="1" ar camera-controls touch-action="pan-y" alt="A 3D model carousel">
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <button id="ar-failure">
+        AR is not tracking!
+    </button>
     <div class="slider">
         <div class="slides">
-            <button class="slide selected" onclick="switchSrc(this, 'TNA')" style="background-image: url('poster.webp');">
+            <button class="slide selected" onclick="switchSrc(this, 'Chair')" style="background-image: url('Chair.webp');">
             </button>
-            <button class="slide" onclick="switchSrc(this, 'asset')" style="background-image: url('poster.webp');">
-            </button><button class="slide" onclick="switchSrc(this, 'Ring Applicator')" style="background-image: url('poster.webp');">
-            </button><button class="slide" onclick="switchSrc(this, 'iitpl')" style="background-image: url('poster.webp');">
+            <button class="slide" onclick="switchSrc(this, 'Mixer')" style="background-image: url('Mixer.webp');">
+            </button><button class="slide" onclick="switchSrc(this, 'GeoPlanter')" style="background-image: url('GeoPlanter.webp');">
+            </button><button class="slide" onclick="switchSrc(this, 'ToyTrain')" style="background-image: url('ToyTrain.webp');">
             </button>
-            <button class="slide" onclick="switchSrc(this, 'web')" style="background-image: url('poster.webp');">
+            <button class="slide" onclick="switchSrc(this, 'Canoe')" style="background-image: url('Canoe.webp');">
             </button>
         </div>
     </div>
