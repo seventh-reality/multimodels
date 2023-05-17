@@ -12,12 +12,7 @@
 </head>
 <body>
 <model-viewer src="TNA.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1"  touch-action="pan-y" alt="A 3D model carousel">
-    <button slot="ar-button" id="ar-button">
-        View in your space
-    </button>
-    <button id="ar-failure">
-        AR is not tracking!
-    </button>
+   
     <div class="slider">
         <div class="slides">
             <button class="slide selected" onclick="switchSrc(this, src='iitpl')" style="background-image: url('poster.webp');">
