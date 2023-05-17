@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Model-Viewer</title>
+</head>
+<body>
+<model-viewer src="TNA.glb" poster="poster.webp" shadow-intensity="1" ar camera-controls touch-action="pan-y" alt="A 3D model carousel">
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <button id="ar-failure">
+        AR is not tracking!
+    </button>
+    <div class="slider">
+        <div class="slides">
+            <button class="slide selected" onclick="switchSrc(this, src='iitpl')" style="background-image: url('poster.webp');">
+            </button>
+            <button class="slide" onclick="switchSrc(this, src='asset')" style="background-image: url('Mixer.webp');">
+            </button><button class="slide" onclick="switchSrc(this, src='Ring Applicator')" style="background-image: url('poster.webp');">
+            </button><button class="slide" onclick="switchSrc(this, 'Video')" style="background-image: url('poster.webp');">
+            </button>
+            <button class="slide" onclick="switchSrc(this, 'web')" style="background-image: url('poster.webp');">
+            </button>
+        </div>
+    </div>
+</model-viewer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
