@@ -10,27 +10,7 @@
 <body>
 <div id="card">
 <model-viewer src="1.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="Chair.webp" shadow-intensity="1"  touch-action="pan-y" alt="A 3D model carousel" autoplay>
-     modelViewer.play();
-
-  var extremelySmallIntervalTime = 0.05;
-  var j=0;
-  const interval = setInterval(function(){
-  console.log(modelViewer.currentTime);
-  if(modelViewer.currentTime > 0 && modelViewer.currentTime < (extremelySmallIntervalTime - 0.01))
-  { ++j;
-  console.log(j);
-  if ( j > 0 ){
-  modelViewer.pause();
-  //modelViewer.currentTime = 0;
-  j = 0;
-  clearInterval(interval);
-  }
-   
-  }else if(modelViewer.currentTime == 0)
-  {
-  modelViewer.play();
-  }
-  }, extremelySmallIntervalTime*1000);
+  
    
     <div class="slider">
         <div class="slides">
@@ -45,6 +25,20 @@
         </div>
     </div>
 </model-viewer>
+<script>
+function play_to_end (){
+//play to end or rewind if animation is at end//
+	const modelViewer = document.querySelector('#homme');
+	modelViewer.play();
+	t=modelViewer.duration;
+	t=t*1000/2 ;// because duration is in second and time to play and rewind//
+	setTimeout(stop, t);
+}
+function stop(){
+const modelViewer = document.querySelector('#homme');
+modelViewer.pause();
+}
+</script>
    
 </dev>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
