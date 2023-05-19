@@ -24,6 +24,27 @@
         </div>
     </div>
 </model-viewer>
+    modelViewer.play();
+
+  var extremelySmallIntervalTime = 0.05;
+  var j=0;
+  const interval = setInterval(function(){
+  console.log(modelViewer.currentTime);
+  if(modelViewer.currentTime > 0 && modelViewer.currentTime < (extremelySmallIntervalTime - 0.01))
+  { ++j;
+  console.log(j);
+  if ( j > 0 ){
+  modelViewer.pause();
+  //modelViewer.currentTime = 0;
+  j = 0;
+  clearInterval(interval);
+  }
+   
+  }else if(modelViewer.currentTime == 0)
+  {
+  modelViewer.play();
+  }
+  }, extremelySmallIntervalTime*1000);
 </dev>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
